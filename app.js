@@ -6,7 +6,7 @@
       **********************************************************
 	*/
 
-(function (){
+/*(function (){
   'use restrict';
   angular.module('ShoppingListCheckOff', [])
   .controller('ToBuyController',ToBuyController)
@@ -69,4 +69,5 @@ function ShoppingListCheckOffService(){
   };
 
 }
-})();
+})();*/
+!function(){function t(t){var e=this;e.buyMessage="",e.buyAnItem=function(n){t.itemRemoveFromBuyList(n),0===e.toBuy.length&&(e.buyMessage=t.changeMessage())},e.toBuy=t.showItemsInBuyList()}function e(t){this.bought=t.showItemsInBoughtList(),this.bought}angular.module("ShoppingListCheckOff",[]).controller("ToBuyController",t).controller("AlreadyBoughtController",e).service("ShoppingListCheckOffService",function(){var t=[{name:"Cookies",quantity:10},{name:"Bananas",quantity:100},{name:"fishes",quantity:6},{name:"Cucamber",quantity:10},{name:"potatos",quantity:100},{name:"tomatos",quantity:6}],e=[],n=void 0;t.length;this.itemRemoveFromBuyList=function(i){console.log("You have buy:("+t[i].name+"):,quantity = "+t[i].quantity+" ."),n=t[i],e.push(n),t.splice(i,1)},this.showItemsInBuyList=function(){return t},this.showItemsInBoughtList=function(){return e},this.changeMessage=function(){if(0===t.length&&void 0!==t)return"products are out"}}),t.$inject=["ShoppingListCheckOffService"],e.$inject=["ShoppingListCheckOffService"]}();
